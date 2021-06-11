@@ -13,7 +13,7 @@ We want to create a new
 recommend movies. Since kids' taste change so often - today Sesame Street is in,
 tomorrow it's Paw Patrol - we want to base our recommendations on only the last
 10 movies watched through Prime Video. Let's start off by taking a look at the
-`PrimeVideo` class in the `src/com/amazon/ata/generics/classroom/recommender/movie`
+`PrimeVideo` class in the `src/com/amazon/ata/generics/recommender/movie`
 directory. There are two fields that have the datatype `long` present in this
 class, one a primitive and one a primitive Wrapper class. Why do you think the
 decision was made for each of these types?
@@ -22,8 +22,8 @@ decision was made for each of these types?
 We want to use a combination of the provided `MostRecentlyUsed` and
 `ReadOnlyDAO` to build our `PrimeVideoRecommender` class. Let's learn more about
 these existing classes from the class diagram `PrimeVideoRecommender.puml` in
-`src/com/amazon/ata/generics/classroom/recommender` and their JavaDocs in
-`JAVADOC.md`. Discuss with your group how you think the `PrimeVideoRecommender`
+`src/com/amazon/ata/generics/recommender` and their JavaDocs in
+`Javadocs`. Discuss with your group how you think the `PrimeVideoRecommender`
 will use these classes.
 
 What types will you want to use for the generics in `PrimeVideoRecommender`?
@@ -94,7 +94,7 @@ confirm the enhancements.
 ### EXTENSION: Recommend all the things!
 The kids product team heard of our awesome new Alexa skill and want to start
 recommending products to kids as well. They've sent us their `Product` class you
-can see in the `src/com/amazon/ata/generics/classroom/recommender/product`
+can see in the `src/com/amazon/ata/generics/recommender/product`
 directory. They asked us to make them a `ProductRecommender` with `purchase` and
 `getRecommendation` methods. But we thought we can do them one better, make a
 more flexible `Recommender` class that could be used for either movies or

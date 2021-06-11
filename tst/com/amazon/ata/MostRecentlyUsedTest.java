@@ -1,4 +1,4 @@
-package com.amazon.ata.generics.classroom.recommender;
+package com.amazon.ata.generics.recommender;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
