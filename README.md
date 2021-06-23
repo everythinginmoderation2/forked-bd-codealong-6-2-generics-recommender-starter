@@ -1,10 +1,6 @@
 ## Prime Video Recommender
 
-**Branch name:** generics-classroom
-
-**RDE workflow:**
-* generics-movie-watch
-* generics-movie-recommend
+**GitHub repo:** [ebd-primitive-wrapper-classes-recommender](https://github.com/LambdaSchool/ebd-primitive-wrapper-classes-recommender)
 
 ### Intro
 
@@ -79,7 +75,7 @@ IntelliJ or run the `generics-movie-recommend` workflow to make sure that the
 unit tests for watch are now passing.
 
 Goal:
-* Workflow `generics-movie-recommend` succeeds
+* Gradle command `./gradlew -q clean :test` succeeds
 
 ### EXTENSION: Enhance `getRecommendation`
 In the case that our first random selection does not have a similar
@@ -110,5 +106,4 @@ designs with your teammates. Once you come to a consensus, start coding!
 1. When you have the code to where you want it (at least compiling, ideally all
    tests passing), commit it.
 1. Push it to your remote branch.
-3. Go back to the Recommender Canvas page and paste in a link to your commit on
-   Code Browser.
+3. Go back to the Recommender Canvas page and paste in a link to your commit.
