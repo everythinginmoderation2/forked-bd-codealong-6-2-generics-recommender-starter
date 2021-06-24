@@ -55,11 +55,11 @@ You'll also need to complete the implementation of this test in the
 * `watch_watchPrimeVideo_addToMostRecentlyViewed`
 
 Either run the unit tests in `PrimeVideoRecommenderWatchTest` in IntelliJ or run
-the `generics-movie-watch` workflow to make sure that the unit tests for watch
+the `./gradlew -q clean :test --tests com.amazon.ata.generics.recommender.movie.PrimeVideoRecommenderWatchTest` gradle command to make sure that the unit tests for watch
 are now passing.
 
 Goal:
-* Workflow `generics-movie-watch` succeeds
+* `PrimeVideoRecommenderWatchTest` unit tests are passing.
 
 #### COMPLETION: Implement `getRecommendation`
 Implement the `getRecommendation` method so that it pulls a random movie from
@@ -71,11 +71,11 @@ You'll also need to complete the implementation of this test in the
 * `getRecommendation_singleVideoWatched_returnsRecommendation`
 
 Either run the unit tests in `PrimeVideoRecommenderGetRecommendationTest` in 
-IntelliJ or run the `generics-movie-recommend` workflow to make sure that the
+IntelliJ or run the `./gradlew -q clean :test --tests com.amazon.ata.generics.recommender.movie.PrimeVideoRecommenderGetRecommendationTest` gradle command to make sure that the
 unit tests for watch are now passing.
 
 Goal:
-* Gradle command `./gradlew -q clean :test` succeeds
+* `PrimeVideoRecommenderGetRecommendationTest` unit tests succeed.
 
 ### EXTENSION: Enhance `getRecommendation`
 In the case that our first random selection does not have a similar
