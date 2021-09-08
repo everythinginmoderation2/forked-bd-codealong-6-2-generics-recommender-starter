@@ -1,7 +1,5 @@
 ## Prime Video Recommender
 
-**GitHub repo:** [ebd-primitive-wrapper-classes-recommender](https://github.com/LambdaSchool/ebd-primitive-wrapper-classes-recommender)
-
 ### Intro
 
 We want to create a new
