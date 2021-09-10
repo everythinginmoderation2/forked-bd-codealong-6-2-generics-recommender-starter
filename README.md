@@ -4,8 +4,7 @@
 
 ### Intro
 
-We want to create a new
-[Kid's Alexa Skill](https://www.amazon.com/b?ie=UTF8&node=17500684011) to
+We want to create a new Kid's Alexa Skill to
 recommend movies. Since kids' taste change so often - today Sesame Street is in,
 tomorrow it's Paw Patrol - we want to base our recommendations on only the last
 10 movies watched through Prime Video. Let's start off by taking a look at the
@@ -28,9 +27,9 @@ group, decide which types you will want to use for `E` in `MostRecentlyUsed`
 and for `K` and `V` in `ReadOnlyDAO`. Once you've come to a consensus, continue
 with the implementation.
 
-### Implementation
+## Implementation
 
-#### Update the generic types in the `PrimeVideoRecommender` and the test classes
+### Update the generic types in the `PrimeVideoRecommender` and the test classes
 Let's go ahead and define those generic types in our `PrimeVideoRecommender`
 member variables and constructor. Replace any question marks in `PrimeVideoRecommender`
 with the classes you've decided upon. You will also need to update 
@@ -42,7 +41,7 @@ Goal:
   decided on in the previous step.
 * The classes compile and we don't see anything underlined in red in IntelliJ.
 
-#### Implement `watch`
+### Implement `watch`
 Implement the `watch` method. We want to track the movie that was just watched
 in our `MostRecentlyUsed` collection. Let's say our `MostRecentlyUsed` is
 configured with a capacity of 10 items. If there were already 8 items in our
@@ -61,7 +60,7 @@ are now passing.
 Goal:
 * `PrimeVideoRecommenderWatchTest` unit tests are passing.
 
-#### COMPLETION: Implement `getRecommendation`
+## COMPLETION: Implement `getRecommendation`
 Implement the `getRecommendation` method so that it pulls a random movie from
 one of the most recently viewed movies. It should return that movie's most
 similar movie as our recommendation.
@@ -77,7 +76,8 @@ unit tests for watch are now passing.
 Goal:
 * `PrimeVideoRecommenderGetRecommendationTest` unit tests succeed.
 
-### EXTENSION: Enhance `getRecommendation`
+## Extensions
+### Enhance `getRecommendation`
 In the case that our first random selection does not have a similar
 video, we'd like to continue trying. Enhance your recommendation
 algorithm to find a recommendation using the rest of the most recently
@@ -87,7 +87,7 @@ will need to decide if the tests are no longer valid based on the new
 behavior you have implemented. You should also be writing new tests to 
 confirm the enhancements.
 
-### EXTENSION: Recommend all the things!
+### Recommend all the things!
 The kids product team heard of our awesome new Alexa skill and want to start
 recommending products to kids as well. They've sent us their `Product` class you
 can see in the `src/com/amazon/ata/generics/recommender/product`
@@ -101,7 +101,7 @@ common? Create a class diagram with a suggestion on the classes and
 relationships you need to implement a more flexible `Recommender` class. Compare
 designs with your teammates. Once you come to a consensus, start coding!
 
-### Commit & Push
+## Commit & Push
 
 1. When you have the code to where you want it (at least compiling, ideally all
    tests passing), commit it.
