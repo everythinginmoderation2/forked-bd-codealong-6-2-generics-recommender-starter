@@ -13,8 +13,8 @@ import java.util.Random;
  */
 public class PrimeVideoRecommender {
     // PARTICIPANT -- Update the generic types in PrimeVideoRecommender
-    private MostRecentlyUsed<?> mostRecentlyViewed;
-    private ReadOnlyDao<?, ?> primeVideoDao;
+    private MostRecentlyUsed<PrimeVideo> mostRecentlyViewed;
+    private ReadOnlyDao<Long, PrimeVideo> primeVideoDao;
     private Random random;
 
     /**
@@ -25,8 +25,8 @@ public class PrimeVideoRecommender {
      * @param random             the random
      */
     // PARTICIPANT -- Update the generic types in PrimeVideoRecommender
-    public PrimeVideoRecommender(MostRecentlyUsed<?> mostRecentlyViewed,
-                                 ReadOnlyDao<?, ?> primeVideoDao, Random random) {
+    public PrimeVideoRecommender(MostRecentlyUsed<PrimeVideo> mostRecentlyViewed,
+                                 ReadOnlyDao<Long, PrimeVideo> primeVideoDao, Random random) {
         this.mostRecentlyViewed = mostRecentlyViewed;
         this.primeVideoDao = primeVideoDao;
         this.random = random;
@@ -40,7 +40,11 @@ public class PrimeVideoRecommender {
      * @param videoId ID of the video that was watched on Prime Video
      */
     public void watch(long videoId) {
+         if (primeVideoDao.get(videoId) == null) {
+             throw new IllegalArgumentException("Video cannot be null");
+         }
         // PARTICIPANT -- Implement watch()
+        mostRecentlyViewed.add(primeVideoDao.get(videoId));
     }
 
     /**
@@ -57,6 +61,20 @@ public class PrimeVideoRecommender {
      */
     public PrimeVideo getRecommendation() {
         // PARTICIPANT -- Implement getRecommendation()
-        return null;
+        int size = mostRecentlyViewed.getSize();
+        if (size == 0) {
+            return null;
+        }
+        PrimeVideo randomVideo = mostRecentlyViewed.get(random.nextInt(size));
+
+        if (randomVideo.getMostSimilarId() == null) {
+            return null;
+        } else {
+            return primeVideoDao.get(randomVideo.getMostSimilarId());
+        }
+    }
+
+    public PrimeVideo getMostRecentlyViewed() {
+        return mostRecentlyViewed.get(0);
     }
 }

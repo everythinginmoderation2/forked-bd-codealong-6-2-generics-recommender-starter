@@ -21,6 +21,7 @@ public class MostRecentlyUsed<E> {
     }
 
     /**
+     *
      * Adds an item to the collection. If the collection is already full, this item replaces the oldest item in the
      * collection.
      *
